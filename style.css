@@ -1,0 +1,145 @@
+:root {
+    --bg-color: #131722;
+    --primary-color: #2a2d3b;
+    --text-color: #d1d4dc;
+    --accent-color: #2962ff;
+    --green-color: #26a69a;
+    --red-color: #ef5350;
+    --border-color: #444;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+#calculator-container {
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--border-color);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.3);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    padding: 10px 20px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e53e5;
+}
+
+#results-container {
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+#results-output p {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 6px;
+    margin: 10px 0;
+    line-height: 1.6;
+    border-left: 4px solid var(--border-color);
+}
+
+#results-output .profit {
+    color: var(--green-color);
+    border-left-color: var(--green-color);
+}
+
+#results-output .loss {
+    color: var(--red-color);
+    border-left-color: var(--red-color);
+}
+
+#results-output .info {
+     color: var(--text-color);
+     border-left-color: var(--accent-color);
+}
+

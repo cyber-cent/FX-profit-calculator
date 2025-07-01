@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Profit Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="calculator-container">
+        <h1>Forex Profit Calculator</h1>
+        <form id="forex-form">
+            <div class="form-group">
+                <label for="currency-pair">Currency Pair</label>
+                <select id="currency-pair" name="currency-pair">
+                    <option value="EUR/USD" data-pip="0.0001">EUR/USD</option>
+                    <option value="GBP/USD" data-pip="0.0001">GBP/USD</option>
+                    <option value="USD/JPY" data-pip="0.01">USD/JPY</option>
+                    <option value="AUD/USD" data-pip="0.0001">AUD/USD</option>
+                    <option value="USD/CAD" data-pip="0.0001">USD/CAD</option>
+                    <option value="USD/CHF" data-pip="0.0001">USD/CHF</option>
+                    <option value="NZD/USD" data-pip="0.0001">NZD/USD</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Trade Type</label>
+                <div class="radio-group">
+                    <input type="radio" id="buy" name="trade-type" value="buy" checked>
+                    <label for="buy">Buy</label>
+                    <input type="radio" id="sell" name="trade-type" value="sell">
+                    <label for="sell">Sell</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lot-size">Lot Size</label>
+                <input type="number" id="lot-size" name="lot-size" step="0.01" value="1.0">
+            </div>
+            <div class="form-group">
+                <label for="entry-price">Entry Price</label>
+                <input type="number" id="entry-price" name="entry-price" step="0.00001" required>
+            </div>
+            <div class="form-group">
+                <label for="exit-price">Exit Price (Manual)</label>
+                <input type="number" id="exit-price" name="exit-price" step="0.00001">
+            </div>
+            <div class="form-group">
+                <label for="take-profit">Take Profit</label>
+                <input type="number" id="take-profit" name="take-profit" step="0.00001">
+            </div>
+            <div class="form-group">
+                <label for="stop-loss">Stop Loss</label>
+                <input type="number" id="stop-loss" name="stop-loss" step="0.00001">
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results-container">
+            <h2>Results</h2>
+            <div id="results-output">
+                <p>Enter your trade details and click "Calculate".</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
